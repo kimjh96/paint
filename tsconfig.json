@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"]
+    },
     "module": "commonjs",
     "target": "es5",
+    "esModuleInterop": true,
     "sourceMap": true,
     "strict": true,
-    "esModuleInterop": true,
     "jsx": "preserve"
   },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]

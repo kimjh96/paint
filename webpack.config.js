@@ -6,10 +6,15 @@ module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
   resolve: {
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+      components: path.resolve(__dirname, 'src/components'),
+      pages: path.resolve(__dirname, 'src/pages')
+    },
     extensions: ['.js', '.ts', '.tsx']
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
   devtool: 'eval-cheap-source-map',
@@ -18,11 +23,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        loader: 'ts-loader'
-      },
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
