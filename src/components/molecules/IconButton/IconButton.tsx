@@ -1,17 +1,38 @@
 import React, { PropsWithChildren } from 'react';
 import { styled } from 'src/theme';
 
-const Wrapper = styled.div`
-  display: inline-block;
+const BasedIconButton = styled.button`
   padding: 8px;
   background-color: ${({ theme: { palette } }) => palette.neutral};
-  color: white;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
 `;
 
-function IconButton({ children }: PropsWithChildren<{}>) {
-  return <Wrapper>{children}</Wrapper>;
+const CustomIconButton = styled(BasedIconButton)<{ square?: boolean; padding?: string }>`
+  ${({ square }) =>
+    square &&
+    `
+    border-radius: 0;
+  `};
+  ${({ padding }) =>
+    padding &&
+    `
+    padding: ${padding};
+  `};
+`;
+
+type IconButtonProps = {
+  square?: boolean;
+  padding?: string;
+};
+
+function IconButton({ children, square, padding }: PropsWithChildren<IconButtonProps>) {
+  return (
+    <CustomIconButton square={square} padding={padding}>
+      {children}
+    </CustomIconButton>
+  );
 }
 
 export default IconButton;

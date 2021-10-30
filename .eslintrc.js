@@ -20,8 +20,11 @@ module.exports = {
         tsx: 'never'
       }
     ],
+    'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
-    '@typescript-eslint/no-var-requires': 'off'
+    'react/require-default-props': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off'
   },
   settings: {
     'import/resolver': {

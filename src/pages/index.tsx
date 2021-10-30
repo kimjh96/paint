@@ -8,7 +8,7 @@ import GenericTemplate from 'components/templates/GenericTemplate';
 
 function Index() {
   return (
-    <GenericTemplate toolbar={<Toolbar />}>
+    <GenericTemplate toolbar={<Toolbar color="neutral" />}>
       <canvas />
     </GenericTemplate>
   );

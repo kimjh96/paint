@@ -7,13 +7,13 @@ import Icon from 'components/atoms/Icon';
 // Molecules
 import IconButton from 'components/molecules/IconButton';
 
-const Wrapper = styled.section`
-  padding: 8px;
+const BasedToolbar = styled.div`
   background-color: ${({
     theme: {
       box: { color }
     }
   }) => color.default};
+
   & > div {
     margin-right: 8px;
   }
@@ -22,13 +22,37 @@ const Wrapper = styled.section`
   }
 `;
 
-function Toolbar() {
+const CustomToolbar = styled(BasedToolbar)<{ color?: 'primary' | 'secondary' | 'neutral' }>`
+  ${({
+    theme: {
+      palette: { primary, secondary, neutral }
+    },
+    color
+  }) => {
+    switch (color) {
+      case 'primary':
+        return `background-color: ${primary}`;
+      case 'secondary':
+        return `background-color: ${secondary}`;
+      case 'neutral':
+        return `background-color: ${neutral}`;
+      default:
+        return '';
+    }
+  }};
+`;
+
+type ToolbarProps = {
+  color?: 'primary' | 'secondary' | 'neutral';
+};
+
+function Toolbar({ color }: ToolbarProps) {
   return (
-    <Wrapper>
-      <IconButton>
-        <Icon type="faPen" />
+    <CustomToolbar color={color}>
+      <IconButton square padding="12px">
+        <Icon type="faPen" color="white" />
       </IconButton>
-    </Wrapper>
+    </CustomToolbar>
   );
 }
 
