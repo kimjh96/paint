@@ -1,14 +1,16 @@
 import React from 'react';
 
-// Components
+// Organisms
 import Toolbar from 'components/organisms/Toolbar';
+
+// Templates
+import GenericTemplate from 'components/templates/GenericTemplate';
 
 function Index() {
   return (
-    <main>
-      <Toolbar />
+    <GenericTemplate toolbar={<Toolbar />}>
       <canvas />
-    </main>
+    </GenericTemplate>
   );
 }
 
