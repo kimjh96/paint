@@ -1,9 +1,11 @@
 import React from 'react';
 import { styled } from 'src/theme';
 
-// Components
-import IconButton from 'components/molecules/IconButton';
+// Atoms
 import Icon from 'components/atoms/Icon';
+
+// Molecules
+import IconButton from 'components/molecules/IconButton';
 
 const Wrapper = styled.section`
   padding: 8px;
