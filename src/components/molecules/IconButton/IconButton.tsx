@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { styled } from 'src/theme';
 
-const IconButtonWrapper = styled.div`
+const Wrapper = styled.div`
   display: inline-block;
   padding: 8px;
   background-color: ${({ theme: { palette } }) => palette.neutral};
@@ -11,7 +11,7 @@ const IconButtonWrapper = styled.div`
 `;
 
 function IconButton({ children }: PropsWithChildren<{}>) {
-  return <IconButtonWrapper>{children}</IconButtonWrapper>;
+  return <Wrapper>{children}</Wrapper>;
 }
 
 export default IconButton;

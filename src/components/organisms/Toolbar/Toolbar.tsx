@@ -5,7 +5,7 @@ import { styled } from 'src/theme';
 import IconButton from 'components/molecules/IconButton';
 import Icon from 'components/atoms/Icon';
 
-const ToolbarWrapper = styled.section`
+const Wrapper = styled.section`
   padding: 8px;
   background-color: ${({
     theme: {
@@ -22,11 +22,11 @@ const ToolbarWrapper = styled.section`
 
 function Toolbar() {
   return (
-    <ToolbarWrapper>
+    <Wrapper>
       <IconButton>
         <Icon type="faPen" />
       </IconButton>
-    </ToolbarWrapper>
+    </Wrapper>
   );
 }
 
