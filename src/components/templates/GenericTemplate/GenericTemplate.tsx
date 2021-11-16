@@ -1,22 +1,10 @@
 import React, { ReactElement, PropsWithChildren } from 'react';
-import { styled } from 'src/theme';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`;
-
-const Toolbar = styled.section``;
-
-const Content = styled.main`
-  flex-grow: 1;
-
-  & > canvas {
-    width: 100%;
-    height: 100%;
-  }
-`;
+import {
+  Wrapper,
+  Toolbar,
+  Content
+} from 'components/templates/GenericTemplate/GenericTemplate.styles';
 
 type GenericTemplateProps = {
   toolbar: ReactElement;
